@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunaSeekers - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="login-input">
+            <h1>Login</h1>
+            <form method="post">
+                <div class="txt_field">
+                    <input type="text" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <div class="sel_field">
+                    <label>Role</label>
+                    <select id="roles" name="roles" required>
+                        <option value="Doctor">Doctor</option>
+                        <option value="Patient">Patient</option>
+                        <option value="Pharmacist">Pharmacist</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </header>
+
+</body>
+
+</html>
