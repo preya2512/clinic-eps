@@ -29,8 +29,7 @@ body {
 
 .logo {
     width: 250px;
-    cursor: pointer;
-    margin: 30px;
+    margin: 10px;
 }
 
 nav {
@@ -57,11 +56,9 @@ nav ul li a:hover {
 
 /* Login Form */
 .login-input {
-    position: absolute;
-    top: 25%;
-    left: 40%;
+    margin: auto;
     transform: translate (-50%, -50%);
-    width: 400px;
+    width: 350px;
     border: 1px solid #adadad;
     background: white;
     border-radius: 10px;
@@ -71,6 +68,7 @@ nav ul li a:hover {
 .login-input h1 {
     text-align: center;
     padding: 20px 0;
+    color:rgb(43, 42, 42);
     border-bottom: 1px solid silver;
 }
 
@@ -152,6 +150,17 @@ form .txt_field {
     display: none;
 }
 
+.gender_opt {
+    color: #adadad;
+    
+}
+
+.gender_opt input {
+    margin: 0 0 20px 20px;
+    outline: none;
+
+}
+
 input[type="submit"] {
     width: 100%;
     height: 50px;
@@ -164,9 +173,27 @@ input[type="submit"] {
     cursor: pointer;
     outline: none;
     transition: .2s;
+    margin-top: 10px;
 }
 
 input[type="submit"]:hover {
     background-color: black;
     transition: .2s;
+}
+
+/* SignUp Link */
+.signup-link {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+}
+
+.signup-link a {
+    color: #ff3d74;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
 }
