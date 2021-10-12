@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Luna Seekers - Pharmacist</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/hamburger.svg" alt="Open Navigation"> 
+
+            <nav>
+                <span id="mobile-exit" class="mobile-menu-exit">
+                    <ion-icon name="close-outline"></ion-icon>
+                </span>
+                <ul class='primary-nav'>
+                    <li class="current"><a href="#">Home</a></li>
+                    <li class="current"><a href="#">My Profile</a></li>
+                    
+                </ul> 
+            </nav>
+        </div>
+    </div>
+
+    <section class='hero'>
+        <h1>
+            Welcome Pharmacist
+        </h1>
+        <ul>
+            <li>
+                <button class ="button" type= "button">
+                <span class="button__text">View Prescription</span>
+                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
+                </button>
+            </li>
+            <li>
+                <button class ="button" type= "button">
+                <span class="button__text">Search Prescription</span>                
+                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>                
+                </button>
+            </li>
+            <li>
+                <button class ="button" type= "button">
+                <span class="button__text">Update Status</span>
+                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
+                </button>
+            </li>
+            <li>
+                <button class ="button" type= "button">
+                <span class="button__text">Search Medicine Details</span>
+                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
+                </button>
+            </li>
+            <li>
+                <button class ="button" type= "button">
+                <span class="button__text">Enter Token</span>
+                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
+                </button>
+            </li>
+            <li>
+                <button class ="button" type= "button" onclick="window.location.href='LoginPage.html'">
+                    <span class="button__text">Logout</span>
+                    <ion-icon class="button__icon" name="log-out-outline"></ion-icon>
+                 </button>
+            </li>
+        </ul>
+        
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click',() => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click',() => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+</body>
+</html>
+
+

@@ -34,13 +34,33 @@
                 </select>
             </div>
 
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" onclick="checkRole()">
         </form>
 
         <div class="signup-link">
             New Patient? <a href="PatientSignUp.html">Sign Up</a>
         </div>
     </div>
+
+    <script>
+        function checkRole() {
+            var roles = document.getElementById("roles").value;
+
+            // Redirect to the selected role home page...
+            if(roles == "Patient") {
+                window.location.href="PatientHome.html";
+            }
+            else if(roles == "Doctor") {
+                window.location.href="DoctorHome.html";
+            }
+            else if(roles == "Pharmacist") {
+                window.location.href="PharmacistHome.html";
+            }
+            else if(roles == "Admin") {
+                window.location.href="AdminHome.html";
+            }
+        }
+    </script>
 
 </body>
 
