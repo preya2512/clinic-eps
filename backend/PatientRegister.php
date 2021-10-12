@@ -8,8 +8,6 @@
 	$password = mysqli_real_escape_string ($dbconn, $_REQUEST["password"]);
 
 	
-	$sql = "SELECT COUNT(*) FROM patient";
-	$id = mysqli_query ($dbconn, $sql);
 	$patient = "patient";
 	$sql = "SELECT * FROM patient WHERE username = '" . $username . "'";
 	$result = mysqli_query ($dbconn, $sql);
@@ -17,18 +15,25 @@
 		$resultStr = "FAIL";
 		
 	} else {
-		$sql = "INSERT INTO patient (UserID ,Username, Password, fname, lname, Email, role) VALUES ('" . $id . "', '" . $username . "', '" . $password . "', '" . $fname . "', '". $lname . "', '" . $email . "', '" . $patient . "')";
+		$sql = "INSERT INTO patient (Username, Password, fname, lname, Email, role) VALUES ('" . $username . "', '" . $password . "', '" . $fname . "', '". $lname . "', '" . $email . "', '" . $patient . "')";
 		$result = mysqli_query ($dbconn, $sql);
 		
 		if ($result) {
-			$resultStr = "PASS";
+			$resultStr = "Pass";
 		} 
 		else
 		{
-			$resultStr = "FAIL";
+			$resultStr = "Fail";
 		}
 	}
-		
-	echo($resultStr);
-
+	if ($resultStr == "Pass")
+	{
+		echo($resultStr);
+		echo "<br><a href='LoginPage.html'>LoginPage</a>";
+	}
+	else
+	{
+		echo($resultStr);
+		echo "<br><a href='PatientSignUp.html'>Back to Sign Up</a>";
+	}
 ?>

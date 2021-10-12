@@ -13,7 +13,7 @@
 
     <div class="login-input">
         <h1>Sign Up</h1>
-        <form method="post">
+        <form name="PatientForm"method="post" onsubmit="return validateForm()" action="">
             <!-- add more text fields ... 
                 firstname, lastname, confirm pass, email, gender...
             -->
@@ -51,7 +51,7 @@
                 <label>Gender</label>
                 <input type="radio" id="male" name="gender" required>
                 <label for="male">Male</label>
-                <input type="radio" id="female" name="gender">
+                <input type="radio" id="female" name="gender" required>
                 <label for="female">Female</label>
                 <span></span>
                 
