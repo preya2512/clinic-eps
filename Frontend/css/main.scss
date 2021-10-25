@@ -133,3 +133,63 @@ nav {
     font-size: 2em;
 }
 
+
+.searchBar-container {
+    margin: auto;
+    position: relative;
+    width: 350px;
+    height: 32px;
+    border: 2px solid green;
+    padding: 2px;
+    border-radius: 30px;
+    background: white;
+}
+
+.search-bar {
+    height: 100%;
+    width: 80%;
+    padding: 0 5px;
+    border-radius: 30px;
+    font-size: 16px;
+    outline:none;
+    border:none;
+}
+
+.search-button {
+    background: white;
+    height: 100%;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+.search-list-container {
+    text-align: center;
+    margin: auto;
+    width: 75%;
+    max-width: 600px;
+}
+
+.search-list {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+.patient-data-container {
+    display: block;
+    text-align: left;
+    border: 2px solid green;
+    width: 100%;
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 5px 10px;
+}
+
+.patient-data-container:hover {
+    background: #ddd;
+    cursor: pointer;
+}

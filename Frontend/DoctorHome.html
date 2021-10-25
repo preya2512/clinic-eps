@@ -11,7 +11,7 @@
 <body>
     <div class="navbar">
         <div class="container">
-            <a class="logo" href="#"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
+            <a class="logo" href="DoctorHome.html"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
 
             <img id="mobile-cta" class="mobile-menu" src="images/hamburger.svg" alt="Open Navigation"> 
             
@@ -21,7 +21,7 @@
                     <ion-icon name="close-outline"></ion-icon>
                 </span>
                 <ul class='primary-nav'>
-                    <li class="current"><a href="#">Home</a></li>
+                    <li class="current"><a href="DoctorHome.html">Home</a></li>
                     <li class="current"><a href="#">My Profile</a></li>
                     
                 </ul> 
@@ -35,22 +35,12 @@
         </h1>
         <ul>
             <li>
-                <button class ="button" type= "button">
-                <span class="button__text">Add Prescription</span>
-                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
-                </button>
-            </li>
-            <li>
-                <button class ="button" type= "button">
-                <span class="button__text">Update Prescription</span>                
-                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>                
-                </button>
-            </li>
-            <li>
-                <button class ="button" type= "button">
-                <span class="button__text">Search Patient</span>
-                <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
-                </button>
+                <a href="DoctorSearchPatient.html">
+                    <button class="button" type= "button">
+                    <span class="button__text">Search Patient</span>
+                    <ion-icon class="button__icon" name="document-text-outline"></ion-icon>    
+                    </button>
+                </a>
             </li>
             <li>
                 <button class ="button" type= "button" onclick="window.location.href='LoginPage.html'">
