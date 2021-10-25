@@ -177,7 +177,7 @@ nav .mobile-menu-exit {
   padding: 0;
 }
 
-.patient-data-container {
+.list-data-container {
   display: block;
   text-align: left;
   border: 2px solid green;
@@ -187,7 +187,7 @@ nav .mobile-menu-exit {
   padding: 5px 10px;
 }
 
-.patient-data-container:hover {
+.list-data-container:hover {
   background: #ddd;
   cursor: pointer;
 }
