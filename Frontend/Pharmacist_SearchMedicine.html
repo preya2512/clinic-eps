@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Luna Seekers - Pharmacist</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="PharmacistHome.html"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/hamburger.svg" alt="Open Navigation"> 
+
+            <nav>
+                <span id="mobile-exit" class="mobile-menu-exit">
+                    <ion-icon name="close-outline"></ion-icon>
+                </span>
+                <ul class='primary-nav'>
+                    <li class="current"><a href="PharmacistHome.html">Home</a></li>
+                    <li class="current"><a href="#">My Profile</a></li>
+                    
+                </ul> 
+            </nav>
+        </div>
+    </div>
+
+    <section class='hero'>
+        <h1>
+            Welcome Pharmacist
+        </h1>
+        <form action="">
+            <div class="searchBar-container">
+                <input type="text" class="search-bar" id="search-medicine" placeholder="Search Medicine Details ...">
+                
+                <button type="submit" class="search-button" onclick="ShowSearchResult()">
+                    <ion-icon name="search"></ion-icon>
+                </button>  
+     
+            </div>
+        </form>
+        <br>
+        <div class="search-list-container">
+            <ul class="search-list" id="search-list">
+                <!--- ShowSearchResult() foreach loops -->
+                <li class="list-data-container">                
+                    Medicine ID: 0 <br>
+                    Name: Paracetamol <br>
+                    Stock: 5 <br>                            
+                </li>
+                <li class="list-data-container">                   
+                    Medicine ID: 1 <br>
+                    Name: Synthroid <br>
+                    Stock: 11 <br>                             
+                </li>
+            </ul>
+        </div>
+        
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click',() => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click',() => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+
+<script>
+
+    function ShowSearchResult() {
+
+        // User enter patient's name on search bar
+        var userInput = document.getElementById("search-medicine").value;
+        var SearchList = document.getElementById("search-list");
+        
+        // Clear Search Result before Showing New one
+        while (SearchList.hasChildNodes) {
+            SearchList.removeChild(SearchList.firstChild);
+        }
+
+        // Backend Code below ...
+        
+    }
+    
+</script>
+</body>
+</html>
+
+
