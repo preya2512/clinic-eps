@@ -39,7 +39,10 @@
                 
                 <button type="submit" class="search-button" onclick="ShowSearchResult()">
                     <ion-icon name="search"></ion-icon>
-                </button>              
+                </button>  
+                
+                <button onclick="ShowSearchResult()">rem</button>
+     
             </div>
         </form>
         </section>
@@ -79,30 +82,22 @@
     </script>
 
     <script>
+
         function ShowSearchResult() {
-        
-            ClearSearchResult();
 
             // User enter patient's name on search bar
-            var userInput = document.getElementById("search-patient");
+            var userInput = document.getElementById("search-patient").value;
             var SearchList = document.getElementById("search-list");
-
-            var node = document.createElement("li");
-            var textnode = document.createTextNode("anjay");
-            console.log("anjay");
-            node.appendChild(textnode);
-            SearchList.appendChild(node);
-
-        }
-
-        // Clear Search Result before Showing new Search List
-        function ClearSearchResult() {
-            var SearchList = document.getElementById("search-list");
-
-            if (SearchList.hasChildNodes()) {
+            
+            // Clear Search Result before Showing New one
+            while (SearchList.hasChildNodes) {
                 SearchList.removeChild(SearchList.firstChild);
             }
+
+            // Backend Code below ...
+            
         }
+
 
     </script>
 </body>
