@@ -34,44 +34,42 @@
             Welcome Admin
         </h1>
         <div class="add-container">
-            <h2>ADD USER ACCOUNT</h2>
-            <form name="addUserAccount" method="post" onsubmit="return validateForm()" action="">
-                <!-- add more text fields ... 
-                    firstname, lastname, confirm pass, email, gender...
-                -->
+            <h2>USER ACCOUNT DETAILS</h2>
+            <form name="updateUserAccount" method="post" onsubmit="return validateForm()" action="">
+
                 <div class="add-txt-field">
                     <label>Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username" value="username" readonly>
                     <span></span>                
                 </div>
                 <div class="add-txt-field">
                     <label>First Name</label>
-                    <input type="text" id="first-name" name="first-name" required>
+                    <input type="text" id="first-name" name="first-name" value="first-name" readonly>
                     <span></span>
                 </div>
                 <div class="add-txt-field">
                     <label>Last Name</label>
-                    <input type="text" id="last-name" name="last-name" required>
+                    <input type="text" id="last-name" name="last-name" value="last-name" readonly>
                     <span></span>
                 </div>
                 <div class="add-txt-field">
                     <label>Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" value="passwords" readonly>
                     <span></span>
                 </div>
                 <div class="add-txt-field">
                     <label>Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <input type="password" id="confirm-password" name="confirm-password" value="passwords" readonly>
                     <span></span>
                 </div>    
                 <div class="add-txt-field">
                     <label>Email</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="email" name="email" value="email@email.com" readonly>
                     <span></span>
                 </div>
                 <div class="add-txt-field">
                     <label>Role</label>
-                    <select id="roles" name="roles" required>
+                    <select id="roles" name="roles" disabled>
                         <option value="Patient">Patient</option>
                         <option value="Doctor">Doctor</option>
                         <option value="Pharmacist">Pharmacist</option>
@@ -81,15 +79,11 @@
                 </div>
                 <div class="add-txt-field">
                     <label>Gender</label>
-                    <input type="radio" id="male" name="gender" required>
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" required>
-                    <label for="female">Female</label>
+                    <input type="text" id="" name="gender" value="genderHere" readonly>
                     <span></span>
-                    
-                </div>     
+                </div>
 
-                <input class="enter-button" type="submit" value="Add Account">
+                <input class="enter-button" type="submit" value="Update Account">
             </form>
             <button class="enter-button" onclick="history.go(-1)">Back</button>
         </div>

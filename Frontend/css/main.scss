@@ -184,6 +184,12 @@ nav {
     padding: 0;
 }
 
+.search-list a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
 .list-data-container {
     display: block;
     text-align: left;
@@ -226,7 +232,7 @@ nav {
 
 .add-txt-field label {
     width: 150px;
-    display:inline-block;
+    display: inline-block;
     font-size: 18px;
     font-family: sans-serif;
 }
@@ -239,13 +245,21 @@ nav {
     outline: none;
 }
 
+.add-txt-field select {
+    width: 50%;
+    height: 30px;
+    outline: none;
+    padding: 2px 5px;
+    font-size: 18px;
+}
+
 .add-txt-field input[type=radio] {
     display: inline-block;
     outline: none;
     transform: scale(1.2);
 }
 
-.add-container input[type=submit] {
+.enter-button {
     margin: 10px;
     color: white;
     background-color: #009578;
@@ -256,9 +270,10 @@ nav {
     font-size: 20px;
     border-radius: 5px;
     text-decoration:none;
+    outline:none;
 }
 
-.add-container input[type=submit]:hover {
+.enter-button:hover {
     background-color: #008168;
 }
 
