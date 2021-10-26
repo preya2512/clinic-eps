@@ -134,12 +134,21 @@ nav .mobile-menu-exit {
   font-size: 2em;
 }
 
+.hero h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  color: grey;
+  margin: 5px 0;
+}
+
+/* Search Features */
 .searchBar-container {
   margin: auto;
   position: relative;
   width: 350px;
   height: 32px;
-  border: 2px solid green;
+  border: 2px solid #009578;
   padding: 2px;
   border-radius: 30px;
   background: white;
@@ -180,11 +189,18 @@ nav .mobile-menu-exit {
 .list-data-container {
   display: block;
   text-align: left;
-  border: 2px solid green;
+  border: 2px solid #009578;
   width: 100%;
   font-size: 18px;
   margin: 20px 0;
   padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.list-data-container span, label {
+  display: inline-block;
+  font-family: sans-serif;
+  margin: 5px 0;
 }
 
 .list-data-container:hover {
@@ -192,42 +208,59 @@ nav .mobile-menu-exit {
   cursor: pointer;
 }
 
-.content-table{
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0 ,0 ,0 ,0.15);
-  margin-left: auto ;
-  margin-right: auto;
+/* Add Features */
+.add-container {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #009578;
+  padding: 10px;
+  text-align: center;
 }
 
-.content-table thead tr{
-  background-color: #009879;
-  color: #fff;
+.add-txt-field {
+  width: 100%;
+  margin: 6px;
+  padding: 3px;
   text-align: left;
-  font-weight:bold;
-  font-family: 'Quicksand', sans-serif;
 }
 
-.content-table th,
-.content-table td{
-  padding: 12px 15px;
-  font-family: 'Quicksand', sans-serif;
-  
+.add-txt-field label {
+  width: 150px;
+  display: inline-block;
+  font-size: 18px;
+  font-family: sans-serif;
 }
 
-.content-table tbody tr{
-  border-bottom: 1px solid #dddddd;
+.add-txt-field input[type=text], input[type=password] {
+  width: 50%;
+  height: 18px;
+  padding: 4px 8px;
+  font-size: 18px;
+  outline: none;
 }
 
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+.add-txt-field input[type=radio] {
+  display: inline-block;
+  outline: none;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+.add-container input[type=submit] {
+  margin: 10px;
+  color: white;
+  background-color: #009578;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  font-size: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.add-container input[type=submit]:hover {
+  background-color: #008168;
 }
 /*# sourceMappingURL=main.css.map */

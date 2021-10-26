@@ -11,7 +11,7 @@
 <body>
     <div class="navbar">
         <div class="container">
-            <a class="logo" href="#"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
+            <a class="logo" href="AdminHome.html"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
 
             <img id="mobile-cta" class="mobile-menu" src="images/hamburger.svg" alt="Open Navigation"> 
             
@@ -21,7 +21,7 @@
                     <ion-icon name="close-outline"></ion-icon>
                 </span>
                 <ul class='primary-nav'>
-                    <li class="current"><a href="#">Home</a></li>
+                    <li class="current"><a href="AdminHome.html">Home</a></li>
                     <li class="current"><a href="#">My Profile</a></li>
                     
                 </ul> 
@@ -44,10 +44,12 @@
        
             </li>
             <li>
-                <button class ="button" type= "button">
-                    <span class="button__text">Add User Account</span>
-                    <ion-icon class="button__icon" name="person-add-outline"></ion-icon>    
-                </button>
+                <a href="Admin_AddUserAccount.html">
+                    <button class ="button" type= "button">
+                        <span class="button__text">Add User Account</span>
+                        <ion-icon class="button__icon" name="person-add-outline"></ion-icon>    
+                    </button>
+                </a>
             </li>
             <li>
                 <a href="Admin_SearchUserProfile.html">
@@ -58,10 +60,12 @@
                 </a>
             </li>
             <li>
-                <button class ="button" type= "button">
-                    <span class="button__text">Add User Profile</span>
-                    <ion-icon class="button__icon" name="person-add-outline"></ion-icon>    
-                </button>
+                <a href="#">
+                    <button class ="button" type= "button">
+                        <span class="button__text">Add User Profile</span>
+                        <ion-icon class="button__icon" name="person-add-outline"></ion-icon>    
+                    </button>
+                </a>
             </li>
             <li>
                 <button class ="button" type= "button" onclick="window.location.href='LoginPage.html'">

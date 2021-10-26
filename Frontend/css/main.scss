@@ -20,8 +20,7 @@ body {
         width: 30px;
         height: auto;
       }
-
-    
+ 
 }
 
 nav.menu-btn {
@@ -133,13 +132,21 @@ nav {
     font-size: 2em;
 }
 
+.hero h2{
+    font-family: 'Quicksand', sans-serif; 
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    color: grey;
+    margin: 5px 0;
+}
 
+/* Search Features */
 .searchBar-container {
     margin: auto;
     position: relative;
     width: 350px;
     height: 32px;
-    border: 2px solid green;
+    border: 2px solid #009578;
     padding: 2px;
     border-radius: 30px;
     background: white;
@@ -164,8 +171,6 @@ nav {
     outline: none;
 }
 
-
-
 .search-list-container {
     text-align: center;
     margin: auto;
@@ -182,14 +187,78 @@ nav {
 .list-data-container {
     display: block;
     text-align: left;
-    border: 2px solid green;
+    border: 2px solid #009578;
     width: 100%;
     font-size: 18px;
     margin: 20px 0;
     padding: 5px 10px;
+    border-radius: 6px;
+}
+.list-data-container span, label {
+    display: inline-block;
+    font-family: sans-serif;
+    margin: 5px 0;
 }
 
 .list-data-container:hover {
     background: #ddd;
     cursor: pointer;
 }
+
+
+/* Add Features */
+.add-container {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #009578;
+    padding: 10px;
+    text-align: center;
+}
+
+.add-txt-field {
+    width: 100%;
+    margin: 6px;
+    //border: 3px solid blue;
+    padding: 3px;
+    text-align: left;
+
+}
+
+.add-txt-field label {
+    width: 150px;
+    display:inline-block;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.add-txt-field input[type=text], input[type=password] {
+    width: 50%;
+    height: 18px;
+    padding: 4px 8px;
+    font-size: 18px;
+    outline: none;
+}
+
+.add-txt-field input[type=radio] {
+    display: inline-block;
+    outline: none;
+    transform: scale(1.2);
+}
+
+.add-container input[type=submit] {
+    margin: 10px;
+    color: white;
+    background-color: #009578;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: 0.1s;
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration:none;
+}
+
+.add-container input[type=submit]:hover {
+    background-color: #008168;
+}
+

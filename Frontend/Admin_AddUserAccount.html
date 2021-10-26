@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Luna Seekers - Admin</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="AdminHome.html"><img class="logo" src="images/LunaSeekers_logo.png" alt="Logo"> </a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images/hamburger.svg" alt="Open Navigation"> 
+            
+
+            <nav>
+                <span id="mobile-exit" class="mobile-menu-exit">
+                    <ion-icon name="close-outline"></ion-icon>
+                </span>
+                <ul class='primary-nav'>
+                    <li class="current"><a href="AdminHome.html">Home</a></li>
+                    <li class="current"><a href="#">My Profile</a></li>
+                    
+                </ul> 
+            </nav>
+        </div>
+    </div>
+
+    <section class='hero'>
+        <h1>
+            Welcome Admin
+        </h1>
+        <div class="add-container">
+            <h2>ADD USER ACCOUNT</h2>
+            <form name="addUserAccount" method="post" onsubmit="return validateForm()" action="">
+                <!-- add more text fields ... 
+                    firstname, lastname, confirm pass, email, gender...
+                -->
+                <div class="add-txt-field">
+                    <label>Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <span></span>                
+                </div>
+                <div class="add-txt-field">
+                    <label>First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                    <span></span>
+                </div>
+                <div class="add-txt-field">
+                    <label>Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                    <span></span>
+                </div>
+                <div class="add-txt-field">
+                    <label>Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span></span>
+                </div>
+                <div class="add-txt-field">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <span></span>
+                </div>    
+                <div class="add-txt-field">
+                    <label>Email</label>
+                    <input type="text" id="email" name="email" required>
+                    <span></span>
+                </div>
+                <div class="add-txt-field">
+                    <label>Gender</label>
+                    <input type="radio" id="male" name="gender" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" required>
+                    <label for="female">Female</label>
+                    <span></span>
+                    
+                </div>     
+
+                <input type="submit" value="Add Account">
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click',() => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click',() => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+</body>
+
+</html>
+
