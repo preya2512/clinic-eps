@@ -1,0 +1,135 @@
+<%- include ("../header.ejs") %>
+
+        <div class="searchBar-container">
+            <input type="text" class="search-bar" id="searchpatientinput" name="searchpatient" placeholder="Search Patient...">
+            
+            <button id="searchPatient" class="search-button">
+                <ion-icon name="search"></ion-icon>
+            </button>  
+    
+        </div>
+
+        <br>
+        <div class="search-list-container">
+            <ul class="search-list" id="search-list">
+                <% if(data.length> 0) { %>
+                
+                    <% data.forEach(function(user) { %>
+                            
+                            <li class="list-data-container">    
+                                <span>Patient ID: <%= user.UserID %></span> <br>
+                                <span>Patient Name: <%= user.Name %> </span><br>
+                                <span>Email: <%= user.Email %></span> <br>
+                                <br>
+                                <div>
+                                    <a class= "enter-button" href="/doctor/addprescription/<%= user.UserID %>">Add Prescription</a>
+                                    <a class= "enter-button" href="/doctor/updateprescription/<%= user.UserID %>">View Prescription</a>
+                                </div>       
+                                <br>                         
+                            </li>
+                            
+                    <% }); %>
+                    
+                <% } else { %>
+                       <h1>No Results</h1>
+                <% } %>
+    
+            </ul>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click',() => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click',() => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready (function() {
+            $("#searchPatient").on("click", function() {
+                console.log("click search btn!");
+                var userInputForm = $('#searchpatient').val(); 
+        
+            console.log("start ajax call");
+            $.ajax({
+                url: "/searchpatient",
+                type: "POST",
+                data: {
+                    'userInputForm': $("#searchpatientinput").val() 
+                },
+                success: function(response, status, http) {
+
+                    if(response.length > 0) {
+
+                        if (response) {
+                            console.log('AJAX worked!');
+                            console.log(response);
+                            var toAppendHtml = "";
+
+                            $("#nouser").remove();
+                            $("#search-list li").remove();  
+
+                            for (var user in response) {
+
+                                var id = response[user].UserID;
+                                var username = response[user].Username; 
+                                var password = response[user].Password; 
+                                var name = response[user].Name; 
+                                var email = response[user].Email; 
+                                var role = response[user].Role;
+
+                                toAppendHtml += "<li class='list-data-container'>" + 
+                                    "<span>Patient ID: " + id + "</span> <br>" +
+                                    "<span>Patient Name: " + name + "</span> <br>" +
+                                    "<span>Email: " + email + "</span> <br><br>" +
+                                    "<div><a class= 'enter-button' href='/doctor/addprescription/" + 
+                                        id + "''>Add Prescription</a> " +
+
+                                    "<a class= 'enter-button' href='/doctor/updateprescription/" + 
+                                    id + "'>View Prescription</a></div> <br> </li>" ;
+                                                          
+                            }
+
+                            $("#search-list").append(toAppendHtml);                           
+                        }
+                    }
+
+                    else {
+                        console.log("EMPTY AJAX");
+
+                        $("#nouser").remove();
+                        $("#search-list li").remove();
+
+                        var toAppendHtml = "<h2 id='nouser'>NO USER FOUND</h2>";
+
+                        $(toAppendHtml).insertAfter("#search-list");
+
+                    }
+                }
+                , error: function(e){
+                    console.log('error');
+                    console.log(e);
+                }
+                });
+
+
+            })
+        });
+    </script>
+
+</body>
+
+</html>
+
