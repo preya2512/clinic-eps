@@ -1,0 +1,103 @@
+<%- include ("../header.ejs") %>
+
+        <div class="add-container">
+            <br>
+            <h2>PRESCRIPTIONS</h2>
+            <br>
+
+                <% if ( expressFlash.length > 0 ) { %>
+                    <p id="flashMsg" class="success-msg"><%= expressFlash %> </p>
+                <% } %>
+                <% data.forEach(function(prescription) { %>
+                <div class="formContainer">
+                    <form class="updateForm" name="updatestatus" method="post" action="/updateStatus">
+                        <input type="hidden" name="userID" value = "<%= prescription.PrescribedTo %>">
+                        <input type="hidden" class="prescriptionid" name="presciptionid" value="<%= prescription.PrescriptionID %>">  
+                        <div class="add-txt-field">
+                            <label>Prescription ID: </label>
+                            <input type="text" class="prescriptionid" name="presid" value="<%= prescription.PrescriptionID %>" disabled>        
+                        </div>
+                        <div class="add-txt-field">
+                            <label>Prescription: </label>
+                            <input type="text" class="prescriptionname" name="prescriptionName" value="<%= prescription.PrescriptionName %>" disabled>             
+                        </div>
+                        <div class="add-txt-field">
+                            <label>Prescribed On: </label>
+                            <input type="text" class="prescribedOn" name="prescribedOn" value="<%= prescription.PrescribedOn %>" disabled>        
+                        </div>
+                        
+                        <div class="add-txt-field">
+                            <label>Token: </label>
+                            <input type="text" class="token" name="token" value="<%= prescription.Token %>" disabled>             
+                        </div>
+
+                        <div class="add-txt-field">
+                            <label>Status: </label>
+                            <select name="prescriptionstatus" class="prescriptionstatus" id="prescriptionstatus" disabled>
+                                <% if(prescription.PrescriptionStatus == 0) { %>
+                                    <option value="0" selected>Not Dispensed</option>
+                                    <option value="1">Dispensed</option>
+                                <% } else { %>
+                                    <option value="0">Not Dispensed</option>
+                                    <option value="1" selected>Dispensed</option>
+                                <% } %>
+                            </select>     
+                        </div>
+
+                        <% if(prescription.DispensedOn > 0) { %>
+                            <div class="add-txt-field">
+                                <label>Dispensed On: </label>
+                                <input type="text" class="dispensedon" name="dispensedon" value="<%= prescription.DispensedOn %>" disabled>             
+                            </div>
+                        <% } %>
+
+                        <input class="enter-button savebutton" id="savebutton" type="submit" value="Save" disabled>
+                        
+                    </form>
+                    <button class="enter-button updatebutton">Update</button>
+                </div>
+                <% }); %>
+           
+            <br>
+            <button class="enter-button" onclick="location.href = '/Pharmacist_EnterToken'">Back</button>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click',() => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click',() => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+
+    <script>
+        $(document).ready (function() {
+            console.log("Document ready");
+
+            $(".savebutton").hide();
+
+            $(".updatebutton").on("click", function () {
+                console.log("clicked button!");
+                $(this).closest(".formContainer").find(".savebutton").show();
+                $(this).hide();
+                $(this).closest(".formContainer").find(".prescriptionstatus, .savebutton").attr("disabled", false);
+                
+                $("#flashMsg").remove();
+            })
+
+        })
+    </script>
+</body>
+
+</html>
+

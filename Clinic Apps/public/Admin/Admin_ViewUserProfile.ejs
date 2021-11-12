@@ -1,0 +1,76 @@
+<%- include ("../header.ejs") %>
+
+        <div class="add-container">
+            <h2>USER PROFILE</h2>
+            <% user.forEach(function(user) { %>
+                <form action="/updateUserProfile" method="post">
+                    <input type="hidden" name="userid" value = "<%= user.UserID %>">
+                    <div class="add-txt-field">        
+                        <label>Role</label>
+                        <select id="roles" name="roles" required disabled>
+                            <option value="Patient" <% if (user.Role == "Patient"){ %>
+                                selected<% } %>>Patient</option>
+                            <option value="Doctor" <% if (user.Role == "Doctor"){ %>
+                                selected<% } %>>Doctor</option>
+                            <option value="Pharmacist" <% if (user.Role == "Pharmacist"){ %>
+                                selected<% } %>>Pharmacist</option>
+                            <option value="Admin" <% if (user.Role == "Admin"){ %>
+                                selected<% } %>>Admin</option>
+                        </select>
+                        <span></span>
+                    </div> 
+
+                    <input class="enter-button" id="savebutton" type="submit" value="Save Profile">
+                </form>
+                
+            <% }); %>
+
+            <% if ( expressFlash.length > 0 ) { %>
+                <p id="flashMsg" class="success-msg"><%= expressFlash %> </p>
+            <% } %>
+
+            <button class="enter-button" id="updatebutton">Update</button>
+            <button class="enter-button" onclick="location.href = '/Admin_SearchUser'">Back</button>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click',() => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click',() => {
+            nav.classList.remove('menu-btn');
+        })
+    </script>
+
+    <script>
+        $(document).ready (function() {
+            console.log("Document ready");
+
+            $("#savebutton").hide();
+
+            $("#updatebutton").on("click", function () {
+                console.log("clicked button!");
+                $("select, #savebutton").attr("disabled", false);
+                $("#savebutton").show();
+                $("#updatebutton").hide();
+                $("#flashMsg").remove();
+            })
+
+            
+
+        })
+    </script>
+
+</body>
+
+</html>
+
